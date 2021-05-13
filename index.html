@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Alpiland Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
     <meta name="description" content="Site Description Here">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
@@ -16,6 +16,7 @@
     <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/font-rubiklato.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CRubik:300,400,500" rel="stylesheet" />
@@ -28,6 +29,15 @@
             max-width: 278px;
             right: 59px;
             z-index: 999;
+        }
+        
+        .heart-logo {
+            top: -91px;
+            max-width: 278px;
+            right: 59px;
+            z-index: 999;
+            margin-top: 10px;
+            display: none;
         }
 
         .second-left {
@@ -89,6 +99,7 @@
         .alpi-gallery {
             padding-right: 0px;
             padding-left: 0px;
+            max-height: 470px;
         }
 
         .photo-grid {
@@ -120,11 +131,25 @@
             src: url("fonts/RobotoCondensed-Regular.ttf");
         }
 
+        .blog-txt {
+            font-family: 'Roboto Slab Regular', Arial, sans-serif;
+            font-size: 48px;
+            color: white;
+        }
+
         .learn-more-text {
             font-family: 'Roboto Slab Regular', Arial, sans-serif;
             font-size: 18px;
             color: white;
             font-weight: 100 !important;
+        }
+
+        .learn-more-text:hover {
+            font-family: 'Roboto Slab Regular', Arial, sans-serif;
+            font-size: 18px;
+            color: white;
+            font-weight: 100 !important;
+            text-decoration: none;
         }
 
         h1 {
@@ -150,6 +175,7 @@
             font-family: 'Roboto Slab Bold', Arial, sans-serif;
             font-size: 22px;
             color: #00205C;
+            margin-bottom: 0px;
         }
 
         .type-prod {
@@ -163,6 +189,7 @@
             font-family: 'Roboto Slab Bold', Arial, sans-serif !important;
             font-size: 22px;
             color: #00205C;
+            margin-bottom: 80px;
         }
 
         .footer-links {
@@ -189,7 +216,7 @@
             content: '';
             position: absolute;
             top: 100%;
-            left: 15%;
+            left: 16%;
             width: 0;
             height: 0;
             border-top: solid 10px #ffffff;
@@ -202,13 +229,13 @@
             content: '';
             position: absolute;
             top: 100%;
-            left: 29%;
+            left: 30.5%;
             width: 0;
             height: 0;
             border-top: solid 10px #ffffff;
             border-left: solid 13px transparent;
             border-right: solid 13px transparent;
-            box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
+            /* box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5); */
         }
 
         .bar-white.show::after {
@@ -227,7 +254,7 @@
             top: 100%;
             background-color: #EA002A;
             z-index: 14;
-            box-shadow: 0 8px 10px 0 rgb(126, 125, 125);
+            /* box-shadow: 0 8px 10px 0 rgb(126, 125, 125); */
         }
 
         .bar-red::after {
@@ -250,7 +277,7 @@
 
         .hidden-white-block {
             display: none;
-            height: 255px;
+            height: 210px;
             background: white;
             position: absolute;
             top: 185.5px;
@@ -258,7 +285,10 @@
             width: 100%;
         }
 
-        @media screen and (max-height: 1070px) {
+        .hidden-white-block .container {
+                margin-top: 30px;
+        }
+        /* @media screen and (max-height: 1200px) {
             .hidden-white-block {
                 height: 210px;
             }
@@ -266,7 +296,7 @@
             .hidden-white-block .container {
                 margin-top: 30px;
             }
-        }
+        } */
 
         @media screen and (max-width: 1930px) {
             .img-carousel {
@@ -274,16 +304,95 @@
             }
         }
 
+        @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) { 
+                .second-left{
+                    left: 167px;
+                }
+                .first-left{
+                    left: 110px;;
+                }
+                .create-image {
+                    width: 100%;
+                    max-width: 207px;
+                    height: auto;
+                }
+                .create-products-row {
+                    margin-top: 30px!important;
+                }
+                .left-product-btn-header{
+                    margin-right: 20px!important;
+                }
+                .right-product-btn-header {
+                    margin-left: 20px!important;
+                }
+                .alpi-logo {
+                    max-width: 205px;
+                    right: 25px;
+                    top: -62px;
+                }
+                .bar{
+                    margin-top:100px;
+                }
+                .bar-white{
+                    top: 134px;;
+                }
+                .hidden-white-block{
+                    top: 146px;
+                }
+                .first-right{
+                   right: 167px; 
+                }
+                .second-right{
+                    right: 110px;
+                }
+                .bar-white:before{
+                    left: 25.5%;
+                }
+                .bar-white:after{
+                    left: 8%;
+                }
+                .left-cheese-btn-header{
+                    width: 80%;
+                }
+                .right-cheese-btn-header{
+                    width: 80%;
+                }
+                .header-cheese-img {
+                    width: 155px!important;
+                }
+                .cheese-subtext{
+                    font-size: 17px!important;
+                }
+                .first-slider-left{
+                    margin-top: 160px;margin-left:0px!important;
+                }
+                .img-carousel {
+                    max-width: 100%!important;
+                }
+                .hidden-white-block-3 {
+                    height: 300px!important;
+                }
+                .first-slider-right{
+                    margin-top: 160px;margin-right:0px!important;
+                }
+                .circular-logos-sides{
+                    margin-top: 195px;
+                }
+            }
+
         .hidden-white-block-3 {
             height: 530px;
             top: 221px;
-            box-shadow: 0px 0px 20px 10px rgb(126, 125, 125);
+            /* box-shadow: 0px 0px 20px 10px rgb(126, 125, 125); */
         }
 
         .hidden-white-block-4 {
             height: 255px;
             top: 221px;
-            box-shadow: 0px 0px 20px 10px rgb(126, 125, 125);
+            /* box-shadow: 0px 0px 20px 10px rgb(126, 125, 125); */
         }
 
         .hidden-white-block-2 {
@@ -327,9 +436,23 @@
             height: 810.5px !important;
         }
 
+        .flickity-viewport-home {
+            height: 100vh !important;
+        }
+
         .carousel-image-text {
             position: absolute;
             top: 20%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 800px;
+        }
+
+        .carousel-image-text-home {
+            position: absolute;
+            top: 35%;
             left: 0;
             right: 0;
             margin-left: auto;
@@ -370,6 +493,10 @@
             opacity: 0.5;
         }
 
+        .blog-img:hover {
+            opacity: 0.5;
+        }
+
         .someicon {
             display: none;
         }
@@ -393,11 +520,11 @@
         }
 
         .circular-logos {
-            margin-top: 54px;
+            margin-top: 104px;
         }
 
         .circular-logos-sides {
-            margin-top: 105px;
+            margin-top: 155px;
         }
 
         .email-input::placeholder {
@@ -459,6 +586,63 @@
         .header-link {
             color: #fff
         }
+
+        .register {
+            background-color: #EA002A;
+        }
+
+        .register:hover {
+            transform: translate3d(0, 0px, 0);
+            -webkit-transform: translate3d(0, 0px, 0);
+            background-color: #00205C !important;
+        }
+
+        .sticky {
+            position: fixed;
+            margin-top: 0;
+        }
+
+        .sticky-white-bar{
+            position: fixed;
+            top:35px;
+        }
+        
+        .sticky-hidden-block{
+            position: fixed;
+            top:30px;
+        }
+
+        .sticky-hidden-block-after{
+            top: 221px;
+        }
+        .first-slider-left{
+            margin-top: 160px;margin-left:300px;
+        }
+        .first-slider-right{
+            margin-top: 160px;margin-right:300px;
+        }
+        #next-arrow-slider{
+            z-index: 9999;
+            position: relative;
+            float: right;
+            top: -335px;
+            left: 50px;
+        }
+        #prev-arrow-slider{
+            z-index: 9999;
+            position: relative;
+            float: left;
+            top: 140px;
+            right: 50px;
+        }
+        .quality-slider{
+            max-width: 1184px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .slider-quality-photo{
+            margin-bottom: 0px;
+        }
     </style>
 </head>
 
@@ -494,7 +678,8 @@
                         <div class="bar__module">
                             <a href="index.html">
                                 <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
-                                <img class=" logo-light alpi-logo" alt="logo" src="img/278-200-alpiland.png" />
+                                <img id="a-logo" class=" logo-light alpi-logo" alt="logo" src="img/278-200-alpiland.png" />
+                                <img id="h-logo" class=" logo-light heart-logo" alt="logo" src="img/footer-heart.png" />
                             </a>
                         </div>
                         <!--end module-->
@@ -502,7 +687,7 @@
                     <div class="col-lg-5 order-lg-1 header-col" style="top: -7px;">
                         <div class="bar__module">
                             <ul class="menu-horizontal text-left">
-                                <li class="dropdown">
+                                <li class="dropdown first-left">
                                     <span id="our_products" class="dropdown__trigger header-link">τα προϊόντα μας</span>
                                 </li>
                                 <li class="dropdown second-left">
@@ -518,7 +703,7 @@
                                 <li class="dropdown first-right">
                                     <span class="dropdown__trigger header-link">γνωρίστε μας</span>
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown second-right">
                                     <span class="dropdown__trigger header-link">επικοινωνία</span>
                                     <div class="dropdown__container">
                                         <div class="container">
@@ -835,11 +1020,11 @@
             </div>
             <!--end of container-->
         </nav>
-        <div class="bar-white">
+        <div id="bar-w" class="bar-white">
             <div class="container"></div>
         </div>
 
-        <div class="hidden-white-block-1 hidden-white-block">
+        <div id="block1" class="hidden-white-block-1 hidden-white-block">
             <div class="row justify-content-center h-100">
                 <div class="d-flex align-items-center h-100">
                     <div class="container">
@@ -867,7 +1052,8 @@
                             <div class="col-md-4">
 
                                 <div class="row justify-content-center">
-                                    <a id="cheese" class="dropdown__trigger cheese-hover" href="/cheese.html" style="text-decoration: none;">τυριά Alpiland</a>
+                                    <a id="cheese" class="dropdown__trigger cheese-hover" href="/cheese.html"
+                                        style="text-decoration: none;">τυριά Alpiland</a>
                                 </div>
                             </div>
                             <div class="col-md-4 ">
@@ -890,50 +1076,57 @@
                 <div class="bar-red">
                     <div class="container"></div>
                 </div>
-                <div class="hidden-white-block hidden-white-block-4">
+                <div id="block4" class="hidden-white-block hidden-white-block-4">
                     <div class="row justify-content-center cheese-row">
                         <div class="row justify-content-around cheese-container">
                             <div>
                                 <img class="left-product-btn left-cheese-btn-header" src="img/left-btn.png">
                             </div>
                             <div class="">
-                                <img class="header-cheese-img" src="./img/alpiland_cheese_slices_emmental_Aug_20_01.png"
-                                    alt="" />
+                                <img class="header-cheese-img" src="img/edam-alpiland-fetes.png" alt="" id="edam-img" />
                                 <div class="row justify-content-center">
-                                    <span class="dropdown__trigger">Edam Alpiland</span>
+                                    <a class="dropdown__trigger cheese-subtext" href="/" style="text-decoration: none;"
+                                        id="edam-link">Edam Alpiland</a>
                                 </div>
                             </div>
                             <div class="">
-                                <img class="header-cheese-img" src="./img/alpiland_cheese_slices_emmental_Aug_20_01.png"
-                                    alt="" />
+                                <img class="header-cheese-img" src="img/emmental-alpiland-fetes.png" alt=""
+                                    id="emmental-img" />
                                 <div class="row justify-content-center">
-                                    <span class="dropdown__trigger">Emmental Alpiland</span>
+                                    <a class="dropdown__trigger cheese-subtext" href="/" style="text-decoration: none;"
+                                        id="emmental-link">Emmental Alpiland</a>
                                 </div>
                             </div>
                             <div class="">
-                                <a href="/gouda.html"><img class="header-cheese-img" src="img/alpiland_cheese slices_gouda_Aug 20_01.png"alt="" id="gouda-img"/></a>
+                                <a href="/gouda.html"><img class="header-cheese-img" src="img/gouda-alpiland-fetes.png"
+                                        alt="" id="gouda-img" /></a>
                                 <div class="row justify-content-center">
-                                    <a class="dropdown__trigger" href="/gouda.html" style="text-decoration: none;" id="gouda-link">Gouda Alpiland</a>
+                                    <a class="dropdown__trigger cheese-subtext" href="/gouda.html" style="text-decoration: none;"
+                                        id="gouda-link">Gouda Alpiland</a>
                                 </div>
                             </div>
                             <div class="">
-                                <a href="/cheese.html"><img class="header-cheese-img" src="img/alpiland_cheese slices_mozzarella_Aug 20_01.png" id="mozzarella-img" alt="" /></a>
+                                <a href="/cheese.html"><img class="header-cheese-img"
+                                        src="img/mozzarella-fetes-alpiland.png" id="mozzarella-img" alt="" /></a>
                                 <div class="row justify-content-center">
-                                    <a class="dropdown__trigger" href="/cheese.html" id="mozzarella-link" style="text-decoration: none;">Mozzarella Alpiland</a>
+                                    <a class="dropdown__trigger cheese-subtext" href="/cheese.html" id="mozzarella-link"
+                                        style="text-decoration: none;">Mozzarella Alpiland</a>
                                 </div>
                             </div>
                             <div class="">
-                                <img class="header-cheese-img" src="./img/alpiland_cheese_slices_emmental_Aug_20_01.png"
-                                    alt="" />
+                                <img class="header-cheese-img" src="img/saganaki-alpiland.png" alt=""
+                                    id="saganaki-img" />
                                 <div class="row justify-content-center">
-                                    <span class="dropdown__trigger">Σαγανάκι Alpiland</span>
+                                    <a class="dropdown__trigger cheese-subtext" href="/" id="saganaki-link"
+                                        style="text-decoration: none;">Σαγανάκι Alpiland</a>
                                 </div>
                             </div>
                             <div class="">
-                                <img class="header-cheese-img"
-                                    src="./img/alpiland_grated_cheese_kefaloturi_Aug_20_01.png" alt="" />
+                                <img class="header-cheese-img" src="img/kefalotyri-trimmeno-alpiland.png" alt=""
+                                    id="kefaloturi-img" />
                                 <div class="row justify-content-center">
-                                    <span class="dropdown__trigger">Κεφαλοτύρι Alpiland</span>
+                                    <a class="dropdown__trigger cheese-subtext" href="/" id="kefaloturi-link"
+                                        style="text-decoration: none;">Κεφαλοτύρι Alpiland</a>
                                 </div>
                             </div>
                             <div>
@@ -946,7 +1139,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden-white-block-2 hidden-white-block">
+        <div id="block2" class="hidden-white-block-2 hidden-white-block">
             <div class="row justify-content-center h-100">
                 <div class="d-flex align-items-center h-100">
                     <div class="container">
@@ -997,7 +1190,7 @@
                 <div class="bar-red">
                     <div class="container"></div>
                 </div>
-                <div class="hidden-white-block hidden-white-block-3">
+                <div id="block3" class="hidden-white-block hidden-white-block-3">
                     <div class="row justify-content-center create-products-row">
                         <div>
                             <img class="left-product-btn left-product-btn-header" src="img/left-btn.png">
@@ -1034,22 +1227,57 @@
         <!--end bar-->
     </div>
     <div class="main-container">
-        <section class="cover height-100 text-center imagebg parallax" data-overlay="1" style="
-        height: 100vh;
-    ">
-            <div class="background-image-holder" style="min-height: 0;">
-                <img alt="background" src="img/newhomepage.jpg" />
-            </div>
-            <div class="container pos-vertical-center">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 style="line-height: 1;">Ιστορία και παράδοση<br>πάνω από έναν αιώνα</h1>
+        <section class="text-center bg--secondary carousel-1" style="height: 100vh;">
+            <div class="row">
+                <div class="col-12 carousel-container">
+                    <div class="slider" data-paging="true">
+                        <ul class="slides" style="
+                        height: 100vh;
+                    ">
+                            <li>
+                                <div class="testimonial home">
+                                    <img class="img-carousel" alt="Image" src="img/homeslider-1.jpg" />
+                                    <div class="carousel-image-text-home">
+                                        <div class="h1 carousel-main-title"
+                                            style="color: #ffffff; position: relative; top: 1px; left: -17px;line-height: 1;">
+                                            Ιστορία και παράδοση<br>πάνω από έναν αιώνα
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial">
+                                    <img class="img-carousel" alt="Image" src="img/homeslider-2.jpg" />
+                                    <div class="carousel-image-text-home">
+                                        <div class="h1 carousel-main-title"
+                                            style="color: #ffffff; position: relative; top: 1px; left: -17px;line-height: 1;">
+                                            Ιστορία και παράδοση<br>πάνω από έναν αιώνα
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial">
+                                    <img class="img-carousel" alt="Image" src="img/homeslider-3.jpg" />
+                                    <div class="carousel-image-text-home">
+                                        <div class="h1 carousel-main-title"
+                                            style="color: #ffffff; position: relative; top: 1px; left: -17px;line-height: 1;">
+                                            Ιστορία και παράδοση<br>πάνω από έναν αιώνα
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <!--end of row-->
             </div>
+            <!--end of row-->
             <!--end of container-->
         </section>
+
         <section class="text-center korifai-poiot">
             <div class="container product-container">
                 <div class="row">
@@ -1057,122 +1285,109 @@
                         <p class="h1">κορυφαία ποιότητα, προσιτή σε όλους</p>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col">
+                <div>
+                    <div class="quality-slider">
                         <div>
-                            <img class="left-product-btn" src="img/left-btn.png"
-                                style="margin-top: 160px;margin-left:300px;">
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/emmental-block-alpiland.png" />
+                            <p class="text-prod cheese-not-selected">Emmental Alpiland</p>
+                            <p class="type-prod cheese-not-selected">block</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="/cheese.html">Δες περισσότερα</a></button>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <div class="col">
-                                <img class="img-fluid cheese-not-selected" alt="logo"
-                                    src="img/alpiland_cheese_slices_emmental_Aug_20_01.png" />
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <p class="text-prod cheese-not-selected">Emmental Alpiland</p>
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <p class="type-prod cheese-not-selected">φέτες</p>
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <button type="button" class="learn-more text-center d-none"><a
-                                        class="learn-more-text">Δες περισσότερα</a></button>
-                            </div>
-                        </div>
-                        <div class="row mx-auto circular-logos-sides">
-                            <div class="col">
-                                <img class="img-fluid cheese-item" alt="logo" src="img/cheese.png"
-                                    style="width:148px;height:148px;" />
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col cheese-text">
-                                <h3 class="type-prod-btn" style="margin-top: 30px;">τυριά Alpiland</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col product-col">
-                        <div class="row">
-                            <div class="col">
-                                <img class="img-fluid" alt="logo"
-                                    src="img/alpiland_grated_cheese_kefaloturi_Aug_20_01.png" />
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <p class="text-prod ">Κεφαλοτύρι Alpiland</p>
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <p class="type-prod">τριμμένο</p>
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <button type="button" class="learn-more text-center"><a class="learn-more-text">Δες
-                                        περισσότερα</a></button>
-                            </div>
-                        </div>
-                        <div class="row mx-auto circular-logos">
-                            <div class="col">
-                                <img class="img-fluid milk-item" alt="logo" src="img/milk.png"
-                                    style="width:148px;height:148px;" />
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col milk-text">
-                                <h3 class="type-prod-btn" style="margin-top: 30px;">γάλα-ροφήματα Alpiland</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <div class="col">
-                                <img class="img-fluid cheese-not-selected" alt="logo"
-                                    src="img/alpiland_mozzarella_sac_Aug_20_01.png" />
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <p class="text-prod cheese-not-selected">Mozzarella Alpiland</p>
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <p class="type-prod cheese-not-selected">φρέσκια</p>
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col">
-                                <button type="button" class="learn-more text-center d-none"><a
-                                        class="learn-more-text">Δες περισσότερα</a></button>
-                            </div>
-                        </div>
-                        <div class="row mx-auto circular-logos-sides">
-                            <div class="col">
-                                <img class="img-fluid delicatessen-item" alt="logo" src="img/award.png"
-                                    style="width:148px;height:148px;" />
-                            </div>
-                        </div>
-                        <div class="row mx-auto">
-                            <div class="col delicatessen-text">
-                                <h3 class="type-prod-btn" style="margin-top: 30px;">delicatessen</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
                         <div>
-                            <img class="right-product-btn" src="img/right-btn.png"
-                                style="margin-top: 160px;margin-right:300px;">
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/emmental-alpiland-fetes.png" />
+                            <p class="text-prod cheese-not-selected">Emmental Alpiland</p>
+                            <p class="type-prod cheese-not-selected">φέτες</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="/cheese.html">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid slider-quality-photo" alt="logo" src="img/kefalotyri-trimmeno-alpiland.png" />
+                            <p class="text-prod">Κεφαλοτύρι Alpiland</p>
+                            <p class="type-prod">τριμμένο</p>
+                            <button type="button" class="learn-more text-center"><a class="learn-more-text" href="/cheese.html">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/freskia-mozzarella.png" />
+                            <p class="text-prod cheese-not-selected">Mozzarella Alpiland</p>
+                            <p class="type-prod cheese-not-selected">φρέσκια</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="/cheese.html">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/edam-alpiland-fetes.png"/>
+                            <p class="text-prod cheese-not-selected">Edam Alpiland</p>
+                            <p class="type-prod cheese-not-selected">φέτες</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/edam-block-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Edam Alpiland</p>
+                            <p class="type-prod cheese-not-selected">block</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/saganaki-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Σαγανάκι Alpiland</p>
+                            <p class="type-prod cheese-not-selected">μερίδες</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/gouda-alpiland-fetes.png"/>
+                            <p class="text-prod cheese-not-selected">Gouda Alpiland</p>
+                            <p class="type-prod cheese-not-selected">φέτες</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/gouda-light-fetes-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Gouda Light Alpiland</p>
+                            <p class="type-prod cheese-not-selected">φέτες</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/gouda-smoked-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Gouda καπνιστή Alpiland</p>
+                            <p class="type-prod cheese-not-selected">φέτες</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/kefalotyri-l-roda-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Κεφαλοτύρι light Alpiland</p>
+                            <p class="type-prod cheese-not-selected">ρόδα</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/kefalotyri-roda-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Κεφαλοτύρι Alpiland</p>
+                            <p class="type-prod cheese-not-selected">ρόδα</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                        <div>
+                            <img class="img-fluid cheese-not-selected slider-quality-photo" alt="logo" src="img/mozzarella-trimmenh-alpiland.png"/>
+                            <p class="text-prod cheese-not-selected">Mozzarella Alpiland</p>
+                            <p class="type-prod cheese-not-selected">τριμμένη</p>
+                            <button type="button" class="learn-more text-center invisible"><a class="learn-more-text" href="#">Δες περισσότερα</a></button>
+                        </div>
+                    </div>
+                    <div class="logos-circles">
+                        <div class="row mx-auto circular-logos-sides">
+                            <div class="row mx-auto">
+                                <div class="col" style="position: relative;left: -95px;">
+                                    <img class="img-fluid cheese-item" alt="logo" src="img/cheese.png" style="width:148px;height:148px;" />
+                                    <div class="cheese-text">
+                                        <h3 class="type-prod-btn" style="margin-top: 30px;white-space: nowrap;">τυριά Alpiland</h3>
+                                    </div>
+                                </div>
+                                <div class="col" style="position: relative;left: 20px;">
+                                    <img class="img-fluid milk-item" alt="logo" src="img/milk.png" style="width:148px;height:148px;" />
+                                    <div class="milk-text">
+                                        <h3 class="type-prod-btn" style="margin-top: 30px;white-space: nowrap;">γάλα-ροφήματα Alpiland</h3>
+                                    </div>
+                                </div>
+                                <div class="col" style="position: relative;right: -140px;">
+                                    <img class="img-fluid delicatessen-item" alt="logo" src="img/award.png" style="width:148px;height:148px;" />
+                                    <div class="delicatessen-text">
+                                        <h3 class="type-prod-btn" style="margin-top: 30px;white-space: nowrap;">delicatessen</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1394,21 +1609,23 @@
             <!--end of row-->
             <!--end of container-->
         </section>
-
         <section class="text-center photo-grid" style="margin-top: 25px;border-top: 0;">
             <h1 class="h1" style="padding-bottom: 25px;">Επικοινωνήστε μαζί μας</h1>
             <div class="row">
                 <div class="col alpi-gallery">
                     <img src="img/shutterstock_663178852.jpg" class="img-fluid">
                 </div>
-                <div class="col alpi-gallery">
+                <div class="col alpi-gallery" style="background-color: black;position:relative;">
                     <img src="img/shutterstock_1095847970.jpg" class="img-fluid fb-contact">
+                    <img src="img/f_logo_RGB-White_72.png" class="fb-icon"
+                        style="position: relative; top: -330px; z-index: 2; width: 100px; height: 100px; display: none;">
                 </div>
                 <div class="col alpi-gallery">
                     <img src="img/shutterstock_458767672.jpg" class="img-fluid">
                 </div>
-                <div class="col alpi-gallery">
-                    <img src="img/shutterstock_1464216647.jpg" class="img-fluid">
+                <div class="col alpi-gallery" style="background-color: black;position:relative;">
+                    <img src="img/shutterstock_1464216647.jpg" class="img-fluid blog-img">
+                    <p class="blog-txt" style="color: white;position: relative;top: -300px;display:none">Blog</p>
                 </div>
             </div>
             <div class="row">
@@ -1481,8 +1698,8 @@
                                         aria-describedby="inputGroup-sizing-sm"
                                         style="width: 349px;position: relative;left: 367px;top: -45px;height: 55px;z-index: 30;">
                                 </div>
-                                <button type="button" class="btn btn-danger"
-                                    style="position: relative;left: 288px;width: 146px;height: 55px;z-index: 45;top: -45px;background-color: #EA002A!important;">Εγγραφή</button>
+                                <button type="button" class="btn btn-danger register"
+                                    style="position: relative;left: 283px;width: 146px;height: 57px;z-index: 45;top: -46px;border: black 1px;">Εγγραφή</button>
                                 <img src="img/footer-heart.png"
                                     style="position: relative;left: 25px;z-index: 45;top: -220px;">
                             </div>
@@ -1535,6 +1752,12 @@
     <script src="js/spectragram.min.js"></script>
     <script src="js/smooth-scroll.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        setTimeout(function () {
+            $('.home').parent().parent().parent().attr('style', 'height: 100vh!important')
+        }, 600)
+    </script>
     <script>
         $('#our_products').mouseenter(function () {
             $('.hidden-white-block-1').show();
@@ -1544,7 +1767,7 @@
             $('.bar-white').removeClass('show-2');
             $('.bar-white').addClass('show');
         });
-        $('.parallax').mouseenter(function () {
+        $('.img-carousel').mouseenter(function () {
             $('.hidden-white-block-2').hide();
             $('#create').css('color', 'white')
             $('.bar-white').removeClass('show');
@@ -1552,12 +1775,12 @@
             $('.bar-red').removeClass('show');
             $('.bar-red').hide();
         });
-        $('.parallax').mouseenter(function () {
+        $('.img-carousel').mouseenter(function () {
             $('.hidden-white-block-1').hide();
             $('.hidden-white-block-3').hide();
             $('.hidden-white-block-4').hide();
-            $('#cheese').css('color','#192956')
-            $('#pleasure').css('color','#192956')
+            $('#cheese').css('color', '#192956')
+            $('#pleasure').css('color', '#192956')
             $('#our_products').css('color', 'white')
         });
         $('.hidden-white-block-3').mouseleave(function () {
@@ -1581,14 +1804,14 @@
             $('.hidden-white-block-3').show();
             $('.bar-red').show();
             $('.bar-red').addClass('show');
-            $('#pleasure').css('color','#EA002A')
+            $('#pleasure').css('color', '#EA002A')
         });
 
         $('.cheese-hover').mouseenter(function () {
             $('.hidden-white-block-4').show();
             $('.bar-red').show();
             $('.bar-red').addClass('show');
-            $('#cheese').css('color','#EA002A')
+            $('#cheese').css('color', '#EA002A')
         });
 
         $('.hidden-white-block-2 .bar-red').mouseenter(function () {
@@ -1664,6 +1887,38 @@
                 $('#mozzarella-link').css('color', '#192956')
             }
         });
+        $('#kefaloturi-img').on({
+            "mouseover": function () {
+                $('#kefaloturi-link').css('color', '#EA002A')
+            },
+            "mouseout": function () {
+                $('#kefaloturi-link').css('color', '#192956')
+            }
+        });
+        $('#saganaki-img').on({
+            "mouseover": function () {
+                $('#saganaki-link').css('color', '#EA002A')
+            },
+            "mouseout": function () {
+                $('#saganaki-link').css('color', '#192956')
+            }
+        });
+        $('#emmental-img').on({
+            "mouseover": function () {
+                $('#emmental-link').css('color', '#EA002A')
+            },
+            "mouseout": function () {
+                $('#emmental-link').css('color', '#192956')
+            }
+        });
+        $('#edam-img').on({
+            "mouseover": function () {
+                $('#edam-link').css('color', '#EA002A')
+            },
+            "mouseout": function () {
+                $('#edam-link').css('color', '#192956')
+            }
+        });
         $('#gouda-img').on({
             "mouseover": function () {
                 $('#gouda-link').css('color', '#EA002A')
@@ -1671,6 +1926,132 @@
             "mouseout": function () {
                 $('#gouda-link').css('color', '#192956')
             }
+        });
+        $('.fb-contact').on({
+            "mouseover": function () {
+                $('.fb-icon').show()
+                $('.fb-contact').css('opacity', 0.5)
+            },
+            "mouseout": function (e) {
+                $('.fb-icon').hide()
+                $('.fb-contact').css('opacity', 1)
+                if (e.relatedTarget.hasClass('fb-icon')) {
+                }
+            }
+        });
+        $('.fb-icon').on({
+            "mouseover": function () {
+                $('.fb-icon').show()
+                $('.fb-contact').css('opacity', 0.5)
+            },
+            "mouseout": function () {
+                $('.fb-icon').hide()
+            }
+        });
+
+        $('.blog-img').on({
+            "mouseover": function () {
+                $('.blog-txt').show()
+                $('.blog-img').css('opacity', 0.5)
+            },
+            "mouseout": function () {
+                $('.blog-txt').hide()
+                $('.blog-img').css('opacity', 1)
+            }
+        });
+        $('.blog-txt').on({
+            "mouseover": function () {
+                $('.blog-txt').show()
+                $('.blog-img').css('opacity', 0.5)
+
+            },
+            "mouseout": function () {
+                $('.blog-txt').hide()
+            }
+        });
+
+
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the navbar
+        var navbar = document.getElementById("menu2");
+        var white_bar = document.getElementById("bar-w");
+        var hidden_white_block_1 = document.getElementById("block1");
+        var hidden_white_block_2 = document.getElementById("block2");
+        var hidden_white_block_3 = document.getElementById("block3");
+        var hidden_white_block_4 = document.getElementById("block4");
+        var a_logo = document.getElementById("a-logo");
+        var h_logo = document.getElementById("h-logo");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+                hidden_white_block_1.classList.add("sticky-hidden-block")
+                hidden_white_block_2.classList.add("sticky-hidden-block")
+                hidden_white_block_3.classList.add("sticky-hidden-block-after")
+                hidden_white_block_4.classList.add("sticky-hidden-block-after")
+                white_bar.classList.add("sticky-white-bar")
+                a_logo.style.display = "none";
+                h_logo.style.display = "inline-block";
+            } else {
+                navbar.classList.remove("sticky");
+                hidden_white_block_1.classList.remove("sticky-hidden-block");
+                hidden_white_block_2.classList.remove("sticky-hidden-block");
+                hidden_white_block_3.classList.remove("sticky-hidden-block-after");
+                hidden_white_block_4.classList.remove("sticky-hidden-block-after");
+                white_bar.classList.remove("sticky-white-bar")
+                h_logo.style.display = "none";
+                a_logo.style.display = "block";
+            }
+        }
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.quality-slider').slick({
+                infinite: true,
+                initialSlide: 2,
+                speed: 300,
+                slidesToShow: 1,
+                centerMode: true,
+                variableWidth: true,
+                focusOnSelect: true,
+                nextArrow: '<img id="next-arrow-slider" src="img/right-btn.png">',
+                prevArrow: '<img id="prev-arrow-slider" src="img/left-btn.png">'
+            });
+            $('.quality-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                $('.slick-current').find('img').removeClass('cheese-not-selected');
+                $('.slick-current').find('button').removeClass('invisible')
+                $('.slick-current').find('p').removeClass('cheese-not-selected');
+            });
+            $('.quality-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                if ($('.slick-slide').hasClass('slick-current')){
+                    $('.slick-slide').find('img').addClass('cheese-not-selected');
+                    $('.slick-slide').find('button').addClass('invisible')
+                    $('.slick-slide').find('p').addClass('cheese-not-selected');
+                }
+            });
+            $('#next-arrow-slider').on({
+                "mouseover": function () {
+                    this.src = 'img/right-btn-red.png';
+                },
+                "mouseout": function () {
+                    this.src = 'img/right-btn.png';
+                }
+            });
+            $('#prev-arrow-slider').on({
+                "mouseover": function () {
+                    this.src = 'img/left-btn-red.png';
+                },
+                "mouseout": function () {
+                    this.src = 'img/left-btn.png';
+                }
+            });
         });
     </script>
 </body>
